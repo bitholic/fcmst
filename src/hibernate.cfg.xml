@@ -1,0 +1,24 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://123.206.81.206:3306/fcms?useUnicode=true&amp;characterEncoding=utf-8</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">letsstart</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="current_session_context_class">thread</property>
+
+        <mapping resource="org/bitholic/dao/Car.hbm.xml"/>
+        <mapping resource="org/bitholic/dao/Employee.hbm.xml"/>
+        <mapping resource="org/bitholic/dao/Shift.hbm.xml" />
+        <mapping resource="org/bitholic/dao/RouteStation.hbm.xml" />
+        <mapping resource="org/bitholic/dao/Route.hbm.xml"/>
+        <mapping resource="org/bitholic/dao/Driver.hbm.xml"/>
+        <mapping resource="org/bitholic/dao/Station.hbm.xml" />
+        <mapping resource="org/bitholic/dao/Account.hbm.xml" />
+	</session-factory>
+</hibernate-configuration>

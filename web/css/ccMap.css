@@ -1,0 +1,43 @@
+
+
+#mainMap {
+    width: 70%;
+    height: 60%;
+    float: right;
+}
+
+.ccMapMenu{
+    width: 30%;
+    height: 60%;
+    float: left;
+    webkitPaddingStart: 30px;
+}
+
+.LineNodeAndOrderListElement{
+    list-style-type: none;
+}
+
+.liElement{
+    list-style-type: none;
+    width: 100%;
+    font-size: 13px;
+    display: inline;
+    float: left;
+}
+
+.liInfo{
+    width: 50%;
+    float: left;
+}
+
+.liOperations{
+    width: 50%;
+    float: left;
+}
+
+.spans6 {
+    list-style-type: none;
+    width: 80px;
+    font-size: 13px;
+    display: inline;
+}
