@@ -3,7 +3,6 @@ package org.bitholic.resources;
 import org.bitholic.dao.CarAccess;
 
 import javax.ws.rs.*;
-import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 /**
@@ -19,7 +18,7 @@ public class Cars {
     }
 
     @GET
-    @Path("pagination")
+    @Path("/pagination")
     @Produces("application/json")
     public Response getCars(@QueryParam("offset") int offset, @QueryParam("limit") int limit) {
         String cars = CarAccess.getCars(1, offset, limit);

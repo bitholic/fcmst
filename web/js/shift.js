@@ -11,6 +11,7 @@ $(document).ready(function(){
 
     var table = $("#all-shift-table").DataTable({
         "bProcessing": true,
+        "bFilter": false,
         "sAjaxSource": "api/shift?operation=query",
         "sAjaxDataProp": "shifts",
         columns: [
