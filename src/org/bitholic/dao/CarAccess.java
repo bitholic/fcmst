@@ -28,10 +28,11 @@ public class CarAccess {
         //System.out.println(deleteCar("fefe"));
         //System.out.println(searchCar("drivingLicense","2014211972",0,100));
         //exportCars();
-        System.out.print(getCars());
+        System.out.print(getCar("  "));
 
     }
 
+    //获取特定某辆车车的信息
     public static String getCar(String licenseNumber){
         session = HibernateUtil.getSession();
         Query query = session.createQuery("from Car where licensePlate=?");
@@ -39,7 +40,6 @@ public class CarAccess {
         Car car = (Car)query.uniqueResult();
         gson = new GsonBuilder().serializeNulls().create();
         return gson.toJson(car);
-
     }
 
     //搜索车辆信息
