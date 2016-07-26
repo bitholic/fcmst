@@ -1,6 +1,7 @@
 package org.bitholic.resources;
 
 import org.bitholic.dao.CarAccess;
+import org.bitholic.utils.Authentication;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
@@ -10,10 +11,11 @@ import javax.ws.rs.core.Response;
  */
 
 @Path("/cars")
-public class Cars {
+public class CarResource {
     @GET
     @Produces("application/json")
     public String getCars() {
+        //if(Authentication.identityVerify())
         return CarAccess.getCars();
     }
 
@@ -39,5 +41,18 @@ public class Cars {
         } else {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
+    }
+
+    @POST
+    @Produces("application/json")
+    public Response addCar(String data) {
+        return Response.ok().entity(CarAccess.addCar(data)).build();
+    }
+
+    @DELETE
+    @Path("/{licensePlate}")
+    @Produces("application/json")
+    public Response deleteCar(@PathParam("licensePlate") String licensePlate) {
+        return Response.ok().entity(CarAccess.deleteCar(licensePlate)).build();
     }
 }

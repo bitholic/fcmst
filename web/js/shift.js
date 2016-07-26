@@ -26,6 +26,9 @@ $(document).ready(function(){
                 }
             }
         ],
+        columnDefs: [
+            {orderable: false, targets: -1}
+        ],
         language: {
             "sProcessing": "处理中...",
             "sLengthMenu": "每页显示 _MENU_ 项结果",

@@ -18,6 +18,15 @@
         <url-pattern>/api/*</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>verify</servlet-name>
+        <servlet-class>org.bitholic.servlet.VerifyServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>verify</servlet-name>
+        <url-pattern>/verify</url-pattern>
+    </servlet-mapping>
+
     <!-- 验证码servlet -->
     <servlet>
         <servlet-name>jcaptcha</servlet-name>

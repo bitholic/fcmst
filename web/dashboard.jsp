@@ -1,7 +1,6 @@
 <%@ page import="org.bitholic.utils.Authentication" %>
 <%@ page import="java.util.HashMap" %>
 <%@ page import="org.bitholic.utils.DBConnector" %>
-<%@ page import="org.bitholic.dao.User" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
@@ -17,6 +16,7 @@
 <body>
 
 <%
+    /*
     User user = Authentication.identityVerify(request,response);
     if(user == null){
         out.println("内部错误");
@@ -41,6 +41,7 @@
         //未登录用户
 
     }
+    */
 %>
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-header">

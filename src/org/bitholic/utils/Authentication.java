@@ -7,6 +7,8 @@ import org.bitholic.dao.AccountAccess;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.ws.rs.*;
+import javax.ws.rs.core.*;
 import java.security.MessageDigest;
 
 public class Authentication {
@@ -28,6 +30,10 @@ public class Authentication {
         }catch(Exception e){
             return null;
         }
+    }
+
+    public static boolean identityVerify(Request request, Response response) {
+        return false;
     }
 
     public static Account identityVerify(HttpServletRequest request, HttpServletResponse response) {
@@ -60,9 +66,7 @@ public class Authentication {
                     account = account1;
                 }
             }
-            if(account.getUid() == null){
-                account.setPrivilege(4);
-            }else{
+            if (account != null) {
                 int maxAge = 7*24*60*60;
                 if(account.getRemember() == 0) {
                     maxAge = 60*60;
@@ -70,7 +74,6 @@ public class Authentication {
                 int expire = maxAge + Math.round(System.currentTimeMillis()/1000);
                 Cookie expireCookie = new Cookie("expireTime",String.valueOf(expire));
                 expireCookie.setMaxAge(maxAge);
-                expireCookie.setPath("/output");
                 response.addCookie(expireCookie);
             }
         }catch (Exception e){

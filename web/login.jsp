@@ -1,4 +1,10 @@
+<%@ page import="org.bitholic.utils.Authentication" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+    if (Authentication.identityVerify(request, response) != null) {
+        response.sendRedirect("dashboard.html");
+    }
+%>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -7,6 +13,7 @@
     <link rel="stylesheet" href="css/login.css" />
 </head>
 <body>
+<!--
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -39,7 +46,7 @@
         </div>
     </div>
 </div>
-<!--
+-->
 <form method="post" action="handleLogin.jsp" id="login-form">
     <input type="text" placeholder="用户名" id="name" name="name" required>
     <input type="password" id="password" name="password" placeholder="密码" required>
@@ -48,7 +55,6 @@
     <input type="checkbox" id="remember" name="remember_me" checked>
     <button type="submit" class="submit-bt">登录</button>
 </form>
--->
 <p id="errorInfo" style="color:red"></p>
 <script src="js/jquery-1.12.3.js"></script>
 <script src="js/login.js"></script>

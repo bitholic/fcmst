@@ -5,9 +5,9 @@ $(document).ready(function(){
     $("#login-form").submit(function(event){
         //不执行与事件关联的默认动作
         event.preventDefault();
-        var $form=$(this),url=$form.attr('action');
+        var $form = $(this);
         var rememberMe = $('#remember').prop('checked');
-        var posting = $.getJSON(url, {
+        var posting = $.getJSON("verify", {
             name: $('#name').val(),
             password: $('#password').val(),
             captcha: $('#jcaptcha').val(),
