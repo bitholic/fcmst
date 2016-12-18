@@ -1,3 +1,2 @@
 # fcmst
-Factory Car Manager System
-A project for competition.
+Factory Car Manager System - a project for competition.
